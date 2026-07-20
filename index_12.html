@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sindhu Yamsani — Product Insight, Liminal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fafaf9;
+    color: #1c1917;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #78716c;
+    margin: 0 0 28px 0;
+  }
+
+  /* Header */
+  .header {
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+  h1.hero {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.3;
+    margin: 0;
+  }
+  h1.hero.accent {
+    color: #7f1d1d;
+    margin-top: 8px;
+  }
+
+  /* Argument */
+  .argument {
+    padding-bottom: 48px;
+  }
+  .argument p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #44403c;
+    max-width: 560px;
+    margin: 0;
+  }
+
+  /* Stories */
+  .stories {
+    padding-bottom: 64px;
+  }
+  .story {
+    position: relative;
+    padding-left: 32px;
+    padding-bottom: 44px;
+    border-left: 2px solid #d6d3d1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+  .story:last-child { padding-bottom: 0; }
+  .story.shown { opacity: 1; transform: translateY(0); }
+  .dot {
+    position: absolute;
+    left: -9px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    border: 2px solid #fafaf9;
+  }
+  .story h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1c1917;
+    margin: 0 0 6px 0;
+  }
+  .story .dates {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #78716c;
+    margin: 0 0 16px 0;
+  }
+  .story p.body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #292524;
+    max-width: 560px;
+    margin: 0;
+  }
+
+  /* Example */
+  .example {
+    padding-bottom: 72px;
+  }
+  .example > .lead {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #44403c;
+    max-width: 560px;
+    margin: 0 0 28px 0;
+  }
+  .tiles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    border: 1px solid #d6d3d1;
+    background: #d6d3d1;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tile {
+    background: #f5f5f4;
+    padding: 28px 24px;
+  }
+  .tile.evidence { background: #fafaf9; }
+  .tile-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    margin: 0 0 16px 0;
+  }
+  .tile.opinion .tile-label { color: #78716c; }
+  .tile.evidence .tile-label { color: #7f1d1d; }
+  .tile-quote {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+  }
+  .tile.opinion .tile-quote { color: #57534e; font-style: italic; }
+  .tile.evidence .tile-quote { color: #1c1917; }
+  .tile-note {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #78716c;
+    margin: 0;
+  }
+  .example .closing {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #44403c;
+    max-width: 560px;
+    margin: 28px 0 0 0;
+  }
+
+  @media (min-width: 640px) {
+    .wrap { padding: 0 40px; }
+    .header { padding-top: 72px; padding-bottom: 48px; }
+    h1.hero { font-size: 36px; }
+    .argument { padding-bottom: 56px; }
+    .stories { padding-bottom: 80px; }
+    .story { padding-left: 40px; padding-bottom: 52px; }
+    .story h3 { font-size: 23px; }
+    .example { padding-bottom: 88px; }
+    .tiles { grid-template-columns: 1fr 1fr; }
+    .tile { padding: 32px 28px; }
+  }
+
+  @media (min-width: 960px) {
+    .wrap { max-width: 720px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap header">
+    <p class="eyebrow">SINDHU YAMSANI</p>
+    <h1 class="hero">The part of this job I think is hardest isn&rsquo;t the research or the roadmaps.</h1>
+    <h1 class="hero accent">It&rsquo;s telling a founder who&rsquo;s already had a huge exit that they&rsquo;re wrong, and getting them to actually hear it.</h1>
+  </div>
+
+  <div class="wrap argument">
+    <p>Nobody hands a first-year apprentice that kind of credibility. I don&rsquo;t think it&rsquo;s earned by being confident either. It&rsquo;s earned by what you put on the table before you say what you think. I&rsquo;ve had to do this twice already, in rooms with a lot more on the line for me than a startup apprenticeship.</p>
+  </div>
+
+  <div class="wrap stories">
+    <div class="story">
+      <div class="dot" style="background:#a8a29e;"></div>
+      <h3>Johns Hopkins Hospital</h3>
+      <p class="dates">Aug&ndash;Oct 2025</p>
+      <p class="body">I was a grad student telling surgeons how to run their OR. Nobody in that room owed me anything. So before I said a word about what should change, I put 20+ interviews and the actual turnover numbers on the table, a 33% cut, roughly 200 more surgeries a year, and let people argue with the data instead of with me.</p>
+    </div>
+    <div class="story">
+      <div class="dot" style="background:#57534e;"></div>
+      <h3>Checkpoint Surgical</h3>
+      <p class="dates">Oct&ndash;Dec 2025</p>
+      <p class="body">I had to tell clinical and commercial teams whether to greenlight a new market for a medical device. Same approach: 11+ interviews synthesized into what was actually stopping adoption, before I said go or no-go.</p>
+    </div>
+    <div class="story">
+      <div class="dot" style="background:#7f1d1d;"></div>
+      <h3>Liminal</h3>
+      <p class="dates">what I'd bring</p>
+      <p class="body">I&rsquo;d use the same approach with a founder. Bring what I found first, then say what I think. Let them argue with the evidence, not with me.</p>
+    </div>
+  </div>
+
+  <div class="wrap example">
+    <p class="lead">Concretely, that's the difference between saying:</p>
+    <div class="tiles">
+      <div class="tile opinion">
+        <p class="tile-label">OPINION-FIRST</p>
+        <p class="tile-quote">&ldquo;I think we should cut this feature.&rdquo;</p>
+        <p class="tile-note">Asks someone to trust my taste.</p>
+      </div>
+      <div class="tile evidence">
+        <p class="tile-label">EVIDENCE-FIRST</p>
+        <p class="tile-quote">&ldquo;8 of 11 people I talked to pointed at a different problem, not this one. Here&rsquo;s what they said.&rdquo;</p>
+        <p class="tile-note">Asks someone to look at what I looked at.</p>
+      </div>
+    </div>
+    <p class="closing">That's the whole method. Bring the evidence first, let the founder argue with it, not with me.</p>
+  </div>
+
+<script>
+  const stories = document.querySelectorAll('.story');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('shown');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  stories.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
